@@ -1,0 +1,61 @@
+{
+  "runId": "evidence-20261115T173730Z",
+  "createdAt": "2026-11-15T17:41:17.861786+00:00",
+  "checks": [
+    {
+      "id": "isce3-time",
+      "label": "Zero-Doppler time vs ISCE3",
+      "value": 0.00057,
+      "unit": "ms",
+      "tolerance": 1.0,
+      "pass": true,
+      "detail": "10 points, 2 dates, isce3 0.24.6"
+    },
+    {
+      "id": "isce3-range",
+      "label": "Slant range vs ISCE3",
+      "value": 0.123,
+      "unit": "mm",
+      "tolerance": 10.0,
+      "pass": true,
+      "detail": "max over 10 points"
+    },
+    {
+      "id": "inspector",
+      "label": "Inspector HH vs GeoTIFF recomputation",
+      "value": "4.7e-07",
+      "unit": "dB",
+      "tolerance": "1e-4",
+      "pass": true,
+      "detail": "393 random units, independent windowed reads"
+    },
+    {
+      "id": "gdal-average",
+      "label": "Power aggregation vs GDAL average",
+      "value": "1.6e-11",
+      "unit": "relative",
+      "tolerance": "1e-5",
+      "pass": true,
+      "detail": "267,618 30 m cells"
+    },
+    {
+      "id": "counts",
+      "label": "Headline counts recomputed from grid",
+      "value": "18/18 \u00b7 TN 24,227 \u00b7 FP 0",
+      "unit": "",
+      "tolerance": "exact",
+      "pass": true,
+      "detail": "published 18/18 \u00b7 TN 24,227 \u00b7 FP 0"
+    },
+    {
+      "id": "footprint",
+      "label": "Area outside swath: CMR polygon vs GCOV mask 255",
+      "value": "0.00% vs 0.10%",
+      "unit": "",
+      "tolerance": "< 1% and agree within 0.5 pt",
+      "pass": true,
+      "detail": "two independent measures of the same corner sliver"
+    }
+  ],
+  "allPassed": true
+}

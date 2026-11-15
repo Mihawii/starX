@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="starX: NISAR L-band radar evidence for one Gandak-basin scene: orbit geometry, radar change, independent optical checks and quality gates.">
+  <title>starX · NISAR evidence explorer</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./vendor/leaflet.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./vendor/leaflet.js"></script>
+  <script defer src="./vendor/globe.gl/globe.gl.min.js"></script>
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <header class="bar">
+    <a class="wordmark" href="./" aria-label="starX, NISAR evidence explorer, home"><b>starX</b><span>NISAR evidence explorer</span></a>
+    <nav class="views" aria-label="Views">
+      <button type="button" data-view="orbit" aria-pressed="true">Orbit</button>
+      <button type="button" data-view="scene" aria-pressed="false">Scene</button>
+      <button type="button" data-view="evidence" aria-pressed="false">Evidence</button>
+      <button type="button" data-view="method" aria-pressed="false">Method</button>
+    </nav>
+    <div class="status" id="case-status"><i aria-hidden="true"></i><span>Loading</span></div>
+  </header>
+
+  <div id="load-error" class="error" role="alert" hidden><span>Case data unavailable.</span> <span id="error-detail"></span><button type="button" id="retry" class="pill small">Retry</button></div>
+
+  <main>
+    <section id="view-orbit" class="view orbit" aria-label="Orbit and acquisition geometry">
+      <canvas id="stars" aria-hidden="true"></canvas>
+      <div id="globe" role="img" aria-label="Globe showing NISAR ground tracks, the track 98 swath and the analysis area"></div>
+      <div class="orbit-copy">
+        <p class="kicker accent">NISAR · L-band SAR · NASA–ISRO</p>
+        <h1 id="orbit-title">Loading orbit</h1>
+        <p class="sub" id="orbit-sub"></p>
+        <dl class="facts" id="orbit-facts"></dl>
+      </div>
+      <aside class="orbit-card" aria-label="Scene pair">
+        <p class="kicker">Scene pair · UTC</p>
+        <p class="pair" id="pair-dates">—</p>
+        <button type="button" class="pill solid" id="open-scene">Open scene <span class="arrow">→</span></button>
+      </aside>
+      <ul class="orbit-legend" id="orbit-legend" aria-label="Globe legend"></ul>
+      <aside class="finder" id="finder" aria-label="Evidence-ready pass finder">
+        <p class="kicker accent">Pass finder · live NASA CMR</p>
+        <p class="finder-hint">Click anywhere on the globe — or</p>
+        <div class="finder-presets">
+          <button type="button" class="pill small" data-preset="gandak">Gandak</button>
+          <button type="button" class="pill small" data-preset="kosi">Kosi</button>
+          <button type="button" class="pill small" id="finder-geo">My location</button>
+        </div>
+        <form id="finder-form" class="finder-form" autocomplete="off">
+          <input id="finder-input" inputmode="decimal" placeholder="lat, lon  e.g. 26.51, 86.89" aria-label="Latitude and longitude">
+          <button type="submit" class="pill small solid">Find <span class="arrow">→</span></button>
+        </form>
+        <div id="finder-body" aria-live="polite"></div>
+      </aside>
+      <p class="orbit-note" id="orbit-note"></p>
+    </section>
+
+    <section id="view-scene" class="view scene" aria-label="Scene analysis" hidden>
+      <aside class="panel layers" aria-label="Layers">
+        <h2 class="label">Layers</h2>
+        <div id="layer-list" class="layer-list"></div>
+        <h2 class="label">Overlays</h2>
+        <div id="overlay-list" class="overlay-list"></div>
+        <div class="legend" id="legend" aria-live="polite"></div>
+        <div class="control-row">
+          <label for="opacity" class="label inline">Opacity</label>
+          <input id="opacity" type="range" min="0" max="100" value="100">
+        </div>
+        <button type="button" class="pill small wide" id="compare" aria-pressed="false" disabled>Swipe 12 Sep ↔ 06 Oct</button>
+      </aside>
+
+      <div class="map-wrap">
+        <div id="map" tabindex="0" aria-label="Scene map. Click to inspect a 90 metre unit. Arrow keys pan, plus and minus zoom."></div>
+        <nav class="story-steps" id="story-steps" aria-label="Guided walkthrough">
+          <button type="button" data-step="0" aria-pressed="false">1 · What changed</button>
+          <button type="button" data-step="1" aria-pressed="false">2 · Is it water?</button>
+          <button type="button" data-step="2" aria-pressed="false">3 · Verdict</button>
+          <button type="button" data-step="free" aria-pressed="false">Explore</button>
+        </nav>
+        <p class="story" id="story" hidden></p>
+        <div class="hud tl" id="hud" aria-hidden="true"></div>
+        <div class="readout" id="cursor" aria-hidden="true">—</div>
+        <div class="swipe" id="swipe" hidden>
+          <span>Sep 12</span><input id="swipe-range" type="range" min="0" max="100" value="50" aria-label="Swipe position between Sep 12 and Oct 6"><span>Oct 6</span>
+        </div>
+        <div class="basemap-status" id="basemap-status" hidden>Basemap unavailable · data layers still load</div>
+        <svg class="timeline" id="timeline" role="img" aria-label="Acquisition timeline"></svg>
+      </div>
+
+      <aside class="panel inspector" aria-label="Pixel inspector">
+        <h2 class="label">Pixel inspector <span class="label-note">90 m unit</span></h2>
+        <div id="inspect-body" aria-live="polite"><p class="hint">Click anywhere in the analysis area.</p></div>
+        <h2 class="label">Decision space <span class="label-note" id="decision-n"></span></h2>
+        <canvas id="decision" class="chart" width="320" height="250" role="img" aria-label="Density of Sep 12 versus Oct 6 HH backscatter with the detector region"></canvas>
+        <ul class="key" id="decision-key"></ul>
+        <h2 class="label">Evidence sites</h2>
+        <div id="sites" class="sites"></div>
+      </aside>
+    </section>
+
+    <section id="view-evidence" class="view evidence" aria-label="Evidence" hidden>
+      <div class="col">
+        <h2 class="label">Go / no-go</h2>
+        <table class="gates" id="gates"></table>
+        <h2 class="label">Independent verification <span class="label-note" id="verify-note"></span></h2>
+        <ul class="verify" id="verify"><li><b>Not loaded</b></li></ul>
+      </div>
+      <div class="col">
+        <h2 class="label">Findings</h2>
+        <div id="findings" class="findings"></div>
+        <h2 class="label">Not shown by this case</h2>
+        <ul id="not-shown" class="plain"></ul>
+      </div>
+      <div class="col">
+        <h2 class="label">Accuracy test · Kosi barrage <span class="label-note" id="acc-note"></span></h2>
+        <div id="accuracy"><p class="hint">No accuracy run recorded.</p></div>
+        <h2 class="label">ΔHH distribution <span class="label-note" id="hist-n"></span></h2>
+        <canvas id="hist" class="chart" width="360" height="200" role="img" aria-label="Histogram of HH change per 90 metre unit"></canvas>
+        <h2 class="label">Threshold sensitivity · mapped candidate km²</h2>
+        <table class="matrix" id="sensitivity"></table>
+        <h2 class="label">Oct 6 visibility check</h2>
+        <table class="counts" id="counts"></table>
+        <p class="small" id="counts-scope"></p>
+      </div>
+    </section>
+
+    <section id="view-method" class="view method" aria-label="Method and provenance" hidden>
+      <div class="col">
+        <h2 class="label">Method</h2>
+        <ol id="method-steps" class="steps"></ol>
+        <h2 class="label">Limitations</h2>
+        <ul id="limitations" class="plain"></ul>
+      </div>
+      <div class="col">
+        <h2 class="label">Acquisitions</h2>
+        <div id="acquisitions" class="acq"></div>
+        <h2 class="label">Sources</h2>
+        <ul id="sources" class="plain links"></ul>
+        <h2 class="label">Run</h2>
+        <dl id="run" class="facts tight"></dl>
+        <div class="downloads">
+          <button type="button" class="pill small" id="export-case" disabled>Case JSON <span class="arrow">↓</span></button>
+          <a class="pill small" id="manifest-link" href="./case/manifest.json" download>Run manifest <span class="arrow">↓</span></a>
+          <a class="pill small" id="verification-link" href="./case/verification.json" download>Verification <span class="arrow">↓</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="sr-only" aria-live="polite" id="announce"></div>
+</body>
+</html>

@@ -1,0 +1,969 @@
+{
+  "runId": "evidence-20261115T173730Z",
+  "command": "tools/process_case.py --radar-run runs/access-20261115T163416Z --optical-run runs/access-20261115T161632Z --geometry-run runs/access-20261115T165720Z --water-run runs/water-20261115T173657Z",
+  "python": "3.13.0 | packaged by conda-forge | (main, Nov 27 2024, 19:18:26) [Clang 18.1.8 ]",
+  "platform": "macOS-26.6-arm64-arm-64bit-Mach-O",
+  "radarRun": "runs/access-20261115T163416Z",
+  "opticalRun": "runs/access-20261115T161632Z",
+  "config": "config/case.json",
+  "configSha256": "ce084ed4c6348ef098fd786561ae42b431fa1bd3b4c53551dd3ddda1f5d4f76c",
+  "qa": {
+    "runId": "evidence-20261115T173730Z",
+    "createdAt": "2026-11-15T17:37:30.445802+00:00",
+    "inputs": {
+      "before/HHHH": {
+        "path": "runs/access-20261115T163416Z/before/HHHH.tif",
+        "sha256": "5381aeb1dab57e4c1f386f8db65f8d2466950b1ed6effe3443c4aa3907029f82"
+      },
+      "before/HVHV": {
+        "path": "runs/access-20261115T163416Z/before/HVHV.tif",
+        "sha256": "80701e0e57fcb3bcd7e061cca67e11b58017d0201451834b36f49c94a4b98f5e"
+      },
+      "before/mask": {
+        "path": "runs/access-20261115T163416Z/before/mask.tif",
+        "sha256": "d510ce8019fe3cfd1bf052e5d859f268db384a0c8f6d590d40b8425fcf82ca2c"
+      },
+      "before/numberOfLooks": {
+        "path": "runs/access-20261115T163416Z/before/numberOfLooks.tif",
+        "sha256": "034164450da368c348eab3c8df9190c189d697b0ef09bae173472ebd3a067901"
+      },
+      "after/HHHH": {
+        "path": "runs/access-20261115T163416Z/after/HHHH.tif",
+        "sha256": "59420ceafd2b9d94425a79b0d515ea6630b9a38d67e462bea54d6ed37cfa8374"
+      },
+      "after/HVHV": {
+        "path": "runs/access-20261115T163416Z/after/HVHV.tif",
+        "sha256": "75c12b8054d5ecfa6778f9a40bdf6dfd341e2b29618939287c0e815f101c646d"
+      },
+      "after/mask": {
+        "path": "runs/access-20261115T163416Z/after/mask.tif",
+        "sha256": "52266a206591dd842d6ceccd6de18f042be4119a4fe0193e25df33ba484d0ae6"
+      },
+      "after/numberOfLooks": {
+        "path": "runs/access-20261115T163416Z/after/numberOfLooks.tif",
+        "sha256": "2114ae15bb09cb9e46fd67c3e888b28ff7191f8dba4835812221b619c6a44d20"
+      },
+      "reference-before/Fmask": {
+        "path": "runs/access-20261115T161632Z/raw/reference-before-Fmask.tif",
+        "sha256": "dc13fab922c4743add8283b76582ef775841430f64f13663af780487a2112276",
+        "granule": "G4311449436-LPCLOUD"
+      },
+      "reference-before/B03": {
+        "path": "runs/access-20261115T161632Z/raw/reference-before-B03.tif",
+        "sha256": "8da380af29e53828673744cbda103032b6b844cbc1ea5279932e8cc6ee2fc8b3",
+        "granule": "G4311449436-LPCLOUD"
+      },
+      "reference-before/B8A": {
+        "path": "runs/access-20261115T161632Z/raw/reference-before-B8A.tif",
+        "sha256": "1daa6dc23b5ba63888f738d1664ef3b5ea6b0872697b15f697c0d5ab08754efe",
+        "granule": "G4311449436-LPCLOUD"
+      },
+      "reference-before/B11": {
+        "path": "runs/access-20261115T161632Z/raw/reference-before-B11.tif",
+        "sha256": "b21a1f0e487ef3a5c60b1d137fff4680b2a888fa4b8a7a558c28a5d677f93d28",
+        "granule": "G4311449436-LPCLOUD"
+      },
+      "reference-after/Fmask": {
+        "path": "runs/access-20261115T161632Z/raw/reference-after-Fmask.tif",
+        "sha256": "7264cd7b0b030d647741871f6d882144b127199f545953c8392bbf0743d9604b",
+        "granule": "G4348639422-LPCLOUD"
+      },
+      "reference-after/B03": {
+        "path": "runs/access-20261115T161632Z/raw/reference-after-B03.tif",
+        "sha256": "23d45489ffbf8732e6594f38f63b0dcc8cb24e8590fd728000594f2c0d2a37de",
+        "granule": "G4348639422-LPCLOUD"
+      },
+      "reference-after/B8A": {
+        "path": "runs/access-20261115T161632Z/raw/reference-after-B8A.tif",
+        "sha256": "6a2f5a334fb7b46af45d3fb86446d8c95de52f79f90bf6ba99ef46624a4e4d2a",
+        "granule": "G4348639422-LPCLOUD"
+      },
+      "reference-after/B11": {
+        "path": "runs/access-20261115T161632Z/raw/reference-after-B11.tif",
+        "sha256": "d159b2e4b963d78a6cf3725ec55e177f152d1ccd9b3428066569c9e496a278a4",
+        "granule": "G4348639422-LPCLOUD"
+      },
+      "before/geometry": {
+        "path": "runs/access-20261115T165720Z/before-geometry.json",
+        "sha256": "1fe90e27a7ef834fb103a4cbc506e708251164fa12abf1493c9236d092ec0a5d"
+      },
+      "after/geometry": {
+        "path": "runs/access-20261115T165720Z/after-geometry.json",
+        "sha256": "205c3b85c7c40cfcb88e614a46b09482bfe25210f9779b2b121b4c30c2183e3e"
+      },
+      "accuracy/water_eval.json": {
+        "path": "runs/water-20261115T173657Z/water_eval.json",
+        "sha256": "1be84eeb480f934403bce763a863152a8b6ef8aae38be117c88f241c5c9b6309"
+      }
+    },
+    "gates": [
+      {
+        "gate": "acquisition metadata comparability",
+        "passed": true
+      },
+      {
+        "gate": "identical CRS/transform/shape for all radar layers",
+        "passed": true
+      },
+      {
+        "gate": "non-empty common valid radar domain",
+        "passed": true,
+        "validFraction": 0.9873501030847122
+      },
+      {
+        "gate": "HLS grid shares radar lattice; radar aggregated in power domain to 30 m",
+        "passed": true,
+        "analysisShape": [
+          521,
+          522
+        ]
+      }
+    ],
+    "metadataChecks": [
+      {
+        "field": "trackNumber",
+        "before": 98,
+        "after": 98,
+        "match": true
+      },
+      {
+        "field": "frameNumber",
+        "before": 15,
+        "after": 15,
+        "match": true
+      },
+      {
+        "field": "orbitPassDirection",
+        "before": "Ascending",
+        "after": "Ascending",
+        "match": true
+      },
+      {
+        "field": "lookDirection",
+        "before": "Left",
+        "after": "Left",
+        "match": true
+      },
+      {
+        "field": "compositeReleaseId",
+        "before": "P05023",
+        "after": "P05023",
+        "match": true
+      },
+      {
+        "field": "productVersion",
+        "before": "1.0.11",
+        "after": "1.0.11",
+        "match": true
+      },
+      {
+        "field": "productSpecificationVersion",
+        "before": "1.5.0",
+        "after": "1.5.0",
+        "match": true
+      },
+      {
+        "field": "productType",
+        "before": "GCOV",
+        "after": "GCOV",
+        "match": true
+      },
+      {
+        "field": "isFullFrame",
+        "before": "True",
+        "after": "True",
+        "match": true
+      },
+      {
+        "field": "catalog.FREQUENCY_A_POLARIZATION",
+        "before": [
+          "HH",
+          "HV"
+        ],
+        "after": [
+          "HH",
+          "HV"
+        ],
+        "match": true
+      },
+      {
+        "field": "catalog.FREQUENCY_A_RANGE_BANDWIDTH",
+        "before": [
+          "40"
+        ],
+        "after": [
+          "40"
+        ],
+        "match": true
+      },
+      {
+        "field": "catalog.ORBIT_TYPE",
+        "before": [
+          "MOE"
+        ],
+        "after": [
+          "MOE"
+        ],
+        "match": true
+      },
+      {
+        "field": "filename fidelity flags",
+        "before": [
+          "N",
+          "F"
+        ],
+        "after": [
+          "N",
+          "F"
+        ],
+        "match": true
+      }
+    ],
+    "notes": [
+      "isUrgentObservation differs (before True, after False); recorded, not a geometry/calibration gate."
+    ],
+    "radarMask": {
+      "before": {
+        "0": 28494,
+        "1": 2421525,
+        "255": 2333
+      },
+      "after": {
+        "0": 28631,
+        "1": 2421335,
+        "255": 2386
+      }
+    },
+    "maskSemantics": "Mask indicating the subswath number associated with valid GCOV samples. A GCOV sample is only considered valid if it is generated from fully-focused radar samples. If at least one radar sample in the averaging set is partially focused or invalid, the corresponding mask pixel will contain the value 0. GCOV pixels outside of the radar acquisition extent are filled with the value 255"
+  },
+  "perGroupCandidateCounts": {
+    "0": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "1": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "2": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "3": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "4": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "5": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "6": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "7": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "8": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "9": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "10": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "11": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "12": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "13": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "14": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "15": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "16": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "17": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "18": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "19": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "20": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "21": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "22": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "23": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "24": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "25": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "26": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "27": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "28": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "29": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "30": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "31": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "32": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "33": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "34": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    },
+    "35": {
+      "candidates": 0,
+      "candidatesClearDry": 0,
+      "candidatesClearWater": 0
+    }
+  },
+  "unitChangeReferenceCounts": {
+    "no-water": 3593,
+    "None": 26509
+  },
+  "afterDateCheck": {
+    "counts": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 24227
+    },
+    "precision": null,
+    "recall": null,
+    "falsePositiveRate": 0.0,
+    "referenceCount": 30102,
+    "unknownReferenceCount": 5509,
+    "abstainedCount": 366
+  },
+  "dropOnlyExploratory": {
+    "label": "EXPLORATORY: drop-only rule (delta <= drop, no darkness test), not the frozen detector",
+    "units": 18,
+    "visiblyDryOct6": 18,
+    "visibleWaterOct6": 0,
+    "notInterpretable": 0
+  },
+  "water30": {
+    "reference-before": {
+      "clearPixels": 48829,
+      "waterPixels": 55,
+      "waterKm2": 0.049,
+      "fmaskWaterBitPixels": 0
+    },
+    "reference-after": {
+      "clearPixels": 227715,
+      "waterPixels": 298,
+      "waterKm2": 0.268,
+      "fmaskWaterBitPixels": 0
+    }
+  },
+  "geometry": {
+    "run": "runs/access-20261115T165720Z",
+    "perDate": {
+      "before": {
+        "center": {
+          "incidenceDeg": 46.7603,
+          "lookAngleDeg": 40.6593,
+          "slantRangeKm": 1040.8364,
+          "side": "left",
+          "platformLon": 90.927,
+          "platformLat": 28.8508,
+          "platformAltitudeKm": 753.5367,
+          "platformSpeedKmS": 7.5698,
+          "zeroDopplerUtc": "2026-09-12T23:39:16.367296Z"
+        },
+        "orbitType": "MOE",
+        "interpMethod": "Hermite",
+        "stateVectors": 59,
+        "spanSeconds": 580.0,
+        "nadir": [
+          [
+            95.1154,
+            11.2906
+          ],
+          [
+            94.8486,
+            12.4858
+          ],
+          [
+            94.5801,
+            13.6808
+          ],
+          [
+            94.3097,
+            14.8756
+          ],
+          [
+            94.0372,
+            16.0701
+          ],
+          [
+            93.7625,
+            17.2644
+          ],
+          [
+            93.4853,
+            18.4584
+          ],
+          [
+            93.2054,
+            19.652
+          ],
+          [
+            92.9226,
+            20.8453
+          ],
+          [
+            92.6366,
+            22.0382
+          ],
+          [
+            92.3472,
+            23.2307
+          ],
+          [
+            92.0541,
+            24.4227
+          ],
+          [
+            91.757,
+            25.6143
+          ],
+          [
+            91.4557,
+            26.8053
+          ],
+          [
+            91.1498,
+            27.9959
+          ],
+          [
+            90.8389,
+            29.1858
+          ],
+          [
+            90.5228,
+            30.3752
+          ],
+          [
+            90.2009,
+            31.5639
+          ],
+          [
+            89.873,
+            32.7519
+          ],
+          [
+            89.5385,
+            33.9392
+          ],
+          [
+            89.1969,
+            35.1258
+          ],
+          [
+            88.8478,
+            36.3115
+          ],
+          [
+            88.4905,
+            37.4964
+          ],
+          [
+            88.1244,
+            38.6804
+          ],
+          [
+            87.7489,
+            39.8635
+          ],
+          [
+            87.3632,
+            41.0455
+          ],
+          [
+            86.9665,
+            42.2265
+          ],
+          [
+            86.5579,
+            43.4063
+          ],
+          [
+            86.1365,
+            44.5849
+          ],
+          [
+            85.7012,
+            45.7622
+          ]
+        ]
+      },
+      "after": {
+        "center": {
+          "incidenceDeg": 46.7605,
+          "lookAngleDeg": 40.6595,
+          "slantRangeKm": 1040.8389,
+          "side": "left",
+          "platformLon": 90.927,
+          "platformLat": 28.8507,
+          "platformAltitudeKm": 753.536,
+          "platformSpeedKmS": 7.5698,
+          "zeroDopplerUtc": "2026-10-06T23:39:16.624698Z"
+        },
+        "orbitType": "MOE",
+        "interpMethod": "Hermite",
+        "stateVectors": 59,
+        "spanSeconds": 580.0,
+        "nadir": [
+          [
+            95.1188,
+            11.2751
+          ],
+          [
+            94.852,
+            12.4703
+          ],
+          [
+            94.5835,
+            13.6654
+          ],
+          [
+            94.3131,
+            14.8602
+          ],
+          [
+            94.0407,
+            16.0547
+          ],
+          [
+            93.766,
+            17.249
+          ],
+          [
+            93.4888,
+            18.443
+          ],
+          [
+            93.209,
+            19.6366
+          ],
+          [
+            92.9262,
+            20.8299
+          ],
+          [
+            92.6403,
+            22.0228
+          ],
+          [
+            92.3509,
+            23.2153
+          ],
+          [
+            92.0579,
+            24.4073
+          ],
+          [
+            91.7609,
+            25.5989
+          ],
+          [
+            91.4596,
+            26.79
+          ],
+          [
+            91.1538,
+            27.9805
+          ],
+          [
+            90.843,
+            29.1705
+          ],
+          [
+            90.5269,
+            30.3598
+          ],
+          [
+            90.2052,
+            31.5486
+          ],
+          [
+            89.8773,
+            32.7366
+          ],
+          [
+            89.5429,
+            33.9239
+          ],
+          [
+            89.2014,
+            35.1105
+          ],
+          [
+            88.8524,
+            36.2963
+          ],
+          [
+            88.4952,
+            37.4812
+          ],
+          [
+            88.1293,
+            38.6652
+          ],
+          [
+            87.7539,
+            39.8482
+          ],
+          [
+            87.3683,
+            41.0303
+          ],
+          [
+            86.9718,
+            42.2113
+          ],
+          [
+            86.5634,
+            43.3911
+          ],
+          [
+            86.1422,
+            44.5697
+          ],
+          [
+            85.7071,
+            45.747
+          ]
+        ]
+      }
+    },
+    "grid": {
+      "x": [
+        218400.0,
+        222315.0,
+        226230.0,
+        230145.0,
+        234060.0
+      ],
+      "y": [
+        3032070.0,
+        3028177.5,
+        3024285.0,
+        3020392.5,
+        3016500.0
+      ],
+      "values": [
+        [
+          [
+            47.0188,
+            1044.9079
+          ],
+          [
+            46.8431,
+            1042.1444
+          ],
+          [
+            46.6665,
+            1039.3888
+          ],
+          [
+            46.4891,
+            1036.6411
+          ],
+          [
+            46.3108,
+            1033.9014
+          ]
+        ],
+        [
+          [
+            47.0652,
+            1045.6357
+          ],
+          [
+            46.8897,
+            1042.8701
+          ],
+          [
+            46.7134,
+            1040.1123
+          ],
+          [
+            46.5362,
+            1037.3625
+          ],
+          [
+            46.3582,
+            1034.6207
+          ]
+        ],
+        [
+          [
+            47.1116,
+            1046.364
+          ],
+          [
+            46.9364,
+            1043.5963
+          ],
+          [
+            46.7603,
+            1040.8364
+          ],
+          [
+            46.5833,
+            1038.0845
+          ],
+          [
+            46.4055,
+            1035.3405
+          ]
+        ],
+        [
+          [
+            47.158,
+            1047.0929
+          ],
+          [
+            46.983,
+            1044.3231
+          ],
+          [
+            46.8071,
+            1041.5611
+          ],
+          [
+            46.6303,
+            1038.807
+          ],
+          [
+            46.4528,
+            1036.0609
+          ]
+        ],
+        [
+          [
+            47.2043,
+            1047.8223
+          ],
+          [
+            47.0295,
+            1045.0504
+          ],
+          [
+            46.8538,
+            1042.2864
+          ],
+          [
+            46.6773,
+            1039.5302
+          ],
+          [
+            46.5,
+            1036.7819
+          ]
+        ]
+      ],
+      "fields": [
+        "incidenceDeg",
+        "slantRangeKm"
+      ],
+      "note": "Derived at 100 m ellipsoidal height from the before-date orbit; after-date values agree to <0.001 deg."
+    },
+    "repeatPass": {
+      "incidenceDiffDeg": 0.0002,
+      "slantRangeDiffM": 2.5,
+      "platformAltitudeDiffM": 0.7
+    },
+    "lookSideCheck": {
+      "computed": "left",
+      "metadata": "left",
+      "match": true
+    }
+  },
+  "sensitivity": [
+    {
+      "dropDb": -2.0,
+      "darkDb": -13.0,
+      "candidateKm2": 0.6795
+    },
+    {
+      "dropDb": -2.0,
+      "darkDb": -15.0,
+      "candidateKm2": 0.2439
+    },
+    {
+      "dropDb": -2.0,
+      "darkDb": -18.0,
+      "candidateKm2": 0.0018
+    },
+    {
+      "dropDb": -2.0,
+      "darkDb": -20.0,
+      "candidateKm2": 0.0
+    },
+    {
+      "dropDb": -3.0,
+      "darkDb": -13.0,
+      "candidateKm2": 0.3987
+    },
+    {
+      "dropDb": -3.0,
+      "darkDb": -15.0,
+      "candidateKm2": 0.1611
+    },
+    {
+      "dropDb": -3.0,
+      "darkDb": -18.0,
+      "candidateKm2": 0.0018
+    },
+    {
+      "dropDb": -3.0,
+      "darkDb": -20.0,
+      "candidateKm2": 0.0
+    },
+    {
+      "dropDb": -4.0,
+      "darkDb": -13.0,
+      "candidateKm2": 0.216
+    },
+    {
+      "dropDb": -4.0,
+      "darkDb": -15.0,
+      "candidateKm2": 0.099
+    },
+    {
+      "dropDb": -4.0,
+      "darkDb": -18.0,
+      "candidateKm2": 0.0009
+    },
+    {
+      "dropDb": -4.0,
+      "darkDb": -20.0,
+      "candidateKm2": 0.0
+    },
+    {
+      "dropDb": -6.0,
+      "darkDb": -13.0,
+      "candidateKm2": 0.054
+    },
+    {
+      "dropDb": -6.0,
+      "darkDb": -15.0,
+      "candidateKm2": 0.0261
+    },
+    {
+      "dropDb": -6.0,
+      "darkDb": -18.0,
+      "candidateKm2": 0.0009
+    },
+    {
+      "dropDb": -6.0,
+      "darkDb": -20.0,
+      "candidateKm2": 0.0
+    }
+  ],
+  "siteSelectionRule": "After the census, the most-darkened unit of each evidence type; illustrative, not used for any count."
+}

@@ -1,0 +1,54 @@
+{
+  "globe.gl": {
+    "version": "2.46.2",
+    "source": "https://registry.npmjs.org/globe.gl/-/globe.gl-2.46.2.tgz",
+    "integrity": "sha512-oh5fx/sTVtFa06OrLXxgfZ5TV1xhDzLKw0muc0fxJfpHrvfDNRspGqrgURpEBBYWS7REzQA78vodUrjbpfYoqA==",
+    "license": "MIT (bundle includes three.js and three-globe, MIT)",
+    "accessedAt": "2026-11-15",
+    "files": {
+      "globe.gl/LICENSE": "c633a0da18abe4208665d9faf574f38084bbe38ce5bf743e9ecc06e50b941b59",
+      "globe.gl/globe.gl.min.js": "2c3e445c04d121215910a89688b96091c8a72071c122a4f830081a39b636c94c"
+    }
+  },
+  "fonts": {
+    "packages": [
+      "@fontsource/inter@5.3.0",
+      "@fontsource/dm-mono@5.3.0"
+    ],
+    "source": "https://registry.npmjs.org (integrity verified)",
+    "license": "SIL Open Font License 1.1",
+    "accessedAt": "2026-11-15",
+    "why": "NASA.gov (Horizon) computed styles use Inter and DM Mono",
+    "files": {
+      "fonts/LICENSE-DMMono.txt": "d2766c396a8534cba53340f8af2037749b6a0a1dd3587348c917a70e779d2e32",
+      "fonts/LICENSE-Inter.txt": "3b0a5fca3d17942cde889069889dedbbbd075e9b599968c82a95f4d944e9b345",
+      "fonts/dm-mono-latin-400-normal.woff2": "e1896b13b2b1bb112fac2f9571bd6c40e118746e77a4511edbf43fbb41bf3e1e",
+      "fonts/dm-mono-latin-500-normal.woff2": "9964608a849396bd00c4bfd7034afe03486469dcf20b4f6b8cbdfdd310369951",
+      "fonts/inter-latin-300-normal.woff2": "be0276550393a72b94d673505567dceba801511d5e1ca5a87793190dc5d5a6ca",
+      "fonts/inter-latin-400-normal.woff2": "8909904ab6c872eb994093482a88a28eca2cd95912d7b6fecd72103b0dc07edc",
+      "fonts/inter-latin-500-normal.woff2": "f3779f1efccc4bdcdf9c0a02ab95bf6bd092ed09c48c08cedc725889edd1d19f",
+      "fonts/inter-latin-600-normal.woff2": "f9a06e79cd3a2a20951c0f0e28f66dd0e6d3fda73911d640a2125c8fcb78f21a",
+      "fonts/inter-latin-700-normal.woff2": "6f56409fd3d64bb85f7d070bce20749db2d66b6d63cec586cc22d1c761be2491"
+    }
+  },
+  "earth-texture": {
+    "source": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=BlueMarble_ShadedRelief_Bathymetry&CRS=EPSG:4326&BBOX=-90,-180,90,180&WIDTH=4096&HEIGHT=2048&FORMAT=image/jpeg",
+    "layer": "BlueMarble_ShadedRelief_Bathymetry (NASA GIBS)",
+    "license": "NASA imagery; no copyright, credit NASA GIBS",
+    "accessedAt": "2026-11-15",
+    "use": "globe texture only (context, not data)",
+    "files": {
+      "earth/bluemarble-shaded-relief-bathymetry-4096x2048.jpg": "ba0d25f05080acf378241a00bf6a96ed9b5d03d13f6018c3c59baf98ff6627a8"
+    }
+  },
+  "leaflet": {
+    "version": "1.9.4",
+    "license": "BSD-2-Clause (web/vendor/LICENSE)",
+    "files": {
+      "leaflet.js": "db49d009c841f5ca34a888c96511ae936fd9f5533e90d8b2c4d57596f4e5641a",
+      "leaflet.css": "5f236f11b6ca29a549c06be1c1c786ec53523fb39a1bae2f2ba61f6fef889edb",
+      "LICENSE": "429a0b417b1dabb2af569d73028ccb5b0fc883f9b4b2179eedcd66058b3eec01"
+    },
+    "note": "Vendored by the earlier Codex session; its download URL was not recorded. Version read from the file banner; hashes recorded 2026-11-15."
+  }
+}
